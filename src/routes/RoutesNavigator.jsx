@@ -4,6 +4,7 @@ import Landing from '../pages/Landing'
 import Catalog from '../pages/Catalog';
 import Error404 from '../pages/Error404';
 
+
 const RoutesNavigator = () => {
   return (
     <Routes>
