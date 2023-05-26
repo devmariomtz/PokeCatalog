@@ -4,15 +4,17 @@ import Header from "../components/Header";
 import ResultsLayout from "../components/ResultsLayout";
 import SearchBar from "../components/SearchBar";
 
+
+
 const Catalog = () => {
-  return (
-    <>
-      <Header />
-      <SearchBar />
-      <ResultsLayout />
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <Header/>
+            <SearchBar/>
+            <ResultsLayout/>
+            <Footer/>
+        </>
+    );
 };
 
 export default Catalog;

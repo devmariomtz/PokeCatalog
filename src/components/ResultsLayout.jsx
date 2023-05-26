@@ -3,10 +3,11 @@ import RecommendedPokemosGrid from "./RecommendedPokemosGrid.jsx";
 
 
 const ResultsLayout = () => {
-  return( <div className="bg-primary">
-    <div>
-      <RecommendedPokemosGrid/>
-    </div>
+    return (<div className="bg-primary">
+        <div>
+
+            <RecommendedPokemosGrid/>
+        </div>
     </div>);
 };
 

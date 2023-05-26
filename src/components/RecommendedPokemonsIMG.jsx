@@ -2,10 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import SkeletonGrid from "./SkeletonGrid.jsx";
 
+const RecommendedPokemonsIMG = () => {
 
 
-
-const RecommendedPokemonsImg = () => {
     const [pokemonName, setPokemonName] = useState('');
     const [imgPokemonURL, setImgPokemonURL] = useState('');
     const [pokeTypes, setPokeTypes] = useState('');
@@ -16,6 +15,11 @@ const RecommendedPokemonsImg = () => {
             try {
                 const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
                 const {name} = response.data;
+                const {types} = response.data;
+                const {front_default} = response.data.sprites;
+
+                setImgPokemonURL(front_default);
+                setPokeTypes(types[0].type.name);
                 setPokemonName(name);
             } catch (error) {
                 console.error('Error al obtener el nombre del Pokémon:', error);
@@ -24,34 +28,6 @@ const RecommendedPokemonsImg = () => {
         fetchPokemon();
     }, []);
 
-    useEffect(() => {
-        const fetchPokemonURL = async () => {
-            try {
-                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-                const {front_default} = response.data.sprites;
-
-                setImgPokemonURL(front_default);
-            } catch (error) {
-                console.error('Error al obtener el nombre del Pokémon:', error);
-            }
-        };
-        fetchPokemonURL();
-    }, []);
-
-    useEffect(() => {
-        const fetchPokemonTypes = async () => {
-            try {
-                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-                const {types} = response.data;
-                setPokeTypes(types[0].type.name);
-
-
-            } catch (error) {
-                console.error('Error al obtener el nombre del Pokémon:', error);
-            }
-        };
-        fetchPokemonTypes();
-    }, []);
     if (imgPokemonURL !== '') {
         return (
             <div className="lg:flex">
@@ -73,4 +49,4 @@ const RecommendedPokemonsImg = () => {
     }
 
 }
-export default RecommendedPokemonsImg;
+export default RecommendedPokemonsIMG;
