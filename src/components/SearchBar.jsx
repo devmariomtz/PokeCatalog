@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
-import PokeResponce from "./PokeResponce.jsx";
 
-const SearchBar = () => {
+const SearchBar = ({onInputValue}) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     };
 
-    const handleClick = () => {
-        Console.log(inputValue);
+    const handleClick = (event) => {
+        if (event.keyCode === 13 || event.type === "click")
+        {
+            onInputValue(inputValue);
+        }
     };
     return (
         <div className="bg-primary">
@@ -18,6 +20,7 @@ const SearchBar = () => {
                 <input
                     value={inputValue}
                     onChange={handleInputChange}
+                    onKeyUp={handleClick}
                     type="text"
                     placeholder="Ingresa el nombre del pokemon o su ID"
                     className="bg-secundary rounded-2xl p-[0.7em] w-[100%] placeholder:text-[#0c1717] text-[1.2em]"
