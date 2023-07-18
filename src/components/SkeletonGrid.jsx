@@ -1,18 +1,43 @@
-import React from 'react'
-import Box from '@mui/material/Box';
-import {Skeleton} from "@mui/material";
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
+import Stack from "@mui/material/Stack";
 
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+  height: 10,
+  borderRadius: 5,
+  [`&.${linearProgressClasses.colorPrimary}`]: {
+    backgroundColor:
+      theme.palette.grey[theme.palette.mode === "light" ? 200 : 800],
+  },
+  [`& .${linearProgressClasses.bar}`]: {
+    borderRadius: 5,
+    backgroundColor: theme.palette.mode === "light" ? "#626262" : "#FFFFFF",
+  },
+}));
 
-
-
-//TODO: use hooks to manage the request load, example: use useAsync and a var loading to know if the request still loading (for future versions)
 const SkeletonGrid = () => {
+  return (
+    <>
+      <CustomizedProgressBars />
+    </>
+  );
+};
 
-    return (
-        <Box sx={{width: 300}}>
-            <Skeleton animation="wave" sx={{bgcolor: 'lightgray'}}/>
-            <Skeleton animation="wave" sx={{bgcolor: 'lightgray'}}/>
-            <Skeleton animation="wave" sx={{bgcolor: 'lightgray'}}/>
-        </Box>);
+export function CustomizedProgressBars() {
+  return (
+    <Stack sx={{ width: "100%", color: "grey.500" }} spacing={2}>
+      <BorderLinearProgress />
+      <BorderLinearProgress />
+      <BorderLinearProgress />
+      <BorderLinearProgress />
+      <BorderLinearProgress />
+      <BorderLinearProgress />
+      <BorderLinearProgress />
+    </Stack>
+  );
 }
-export default SkeletonGrid
+
+export default SkeletonGrid;

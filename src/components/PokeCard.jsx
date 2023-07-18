@@ -1,25 +1,30 @@
-import React from 'react'
+import React from "react";
 import useFetch from "../Hooks/useFetch.js";
-
-const PokeCard = ({input}) => {
-
-
-    const {data, loading} = useFetch(`${input}`);
+const PokeCard = ({ word }) => {
+  if (word.length != 0 || word != "") {
+    const { data, loading } = useFetch(word);
 
     return (
-        <div className="bg-primary flex justify-center items-center flex-col w-full text-[1.2em]">
-            {loading ? (
-                <p>CARGANDO ...</p>
-            ) : (
-                <div className="bg-gray-400 w-[30%] flex justify-center flex-col rounded-[20px] p-3">
-                    <img src={data.sprites.front_default} alt="" className=""/>
-                    <div className="flex flex-col justify-center items-center">
-                        <h2><strong>{data.name.toUpperCase()}</strong></h2>
-                        <p>type: {data.types[0].type.name}</p>
-                    </div>
-                </div>
-            )}
-        </div>
+      <div className="bg-primary flex justify-center items-center flex-col w-full text-[1.2em]">
+        {loading ? (
+          <p className="text-white">CARGANDO ...</p>
+        ) : (
+          <>
+            <div className="bg-gray-400 w-[30%] flex justify-center flex-col rounded-[20px] p-3">
+              <img src={data.sprites.front_default} alt="" className="" />
+              <div className="flex flex-col justify-center items-center">
+                <h2>
+                  <strong className="uppercase">{data.name}</strong>
+                </h2>
+                <p className="uppercase">type: {data.types[0].type.name}</p>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
     );
+  } else {
+    return <></>;
+  }
 };
-export default PokeCard
+export default PokeCard;
