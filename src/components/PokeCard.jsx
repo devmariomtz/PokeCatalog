@@ -1,5 +1,6 @@
 import React from "react";
 import useFetch from "../Hooks/useFetch.js";
+import Loader from "./Loader.jsx";
 const PokeCard = ({ word }) => {
   if (word.length != 0 || word != "") {
     const { data, loading } = useFetch(word);
@@ -7,7 +8,9 @@ const PokeCard = ({ word }) => {
     return (
       <div className="bg-primary flex justify-center items-center flex-col w-full text-[1.2em]">
         {loading ? (
-          <p className="text-white">CARGANDO ...</p>
+          <div className="bg-primary mt-4">
+            <Loader />
+          </div>
         ) : (
           <>
             <div className="bg-gray-400 w-[30%] flex justify-center flex-col rounded-[20px] p-3">
@@ -23,7 +26,7 @@ const PokeCard = ({ word }) => {
         )}
       </div>
     );
-  } else {
+  } else{
     return <></>;
   }
 };

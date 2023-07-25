@@ -2693,6 +2693,7 @@ __metadata:
     prop-types: ^15.8.1
     react: ^18.2.0
     react-bootstrap: ^2.7.4
+    react-cssfx-loading: ^2.1.0
     react-dom: ^18.2.0
     react-helmet: ^6.1.0
     react-hot-toast: ^2.4.1
@@ -2871,6 +2872,17 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 589f64354ae03872a111fe3d37ad9b5dc2c69480edfd4b4f912a7d59cc15311df3f0374def08d5d6b63024b1674483daa862004e53bc5fac426d891993484ddc
+  languageName: node
+  linkType: hard
+
+"react-cssfx-loading@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "react-cssfx-loading@npm:2.1.0"
+  dependencies:
+    goober: ^2.1.10
+  peerDependencies:
+    react: ">=16"
+  checksum: 8b878b710ed720434f5db3a7ac811c349956ed37bdaa0385abf0ad2b041c2fcce3d76dfbcb200f307764bf5cfe0dbdf24b99f33875812238fb36aea1b0422c5e
   languageName: node
   linkType: hard
 

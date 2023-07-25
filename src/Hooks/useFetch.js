@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AxiosConfig } from "../config/axios.js";
 
 const UseFetch = (word) => {
@@ -7,6 +7,7 @@ const UseFetch = (word) => {
 
   useEffect(() => {
     const getData = () => {
+      setLoading(true);
       try {
         AxiosConfig.get(word).then((response) => {
           setData(response.data);

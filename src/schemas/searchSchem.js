@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 const searchSchema = Yup.object().shape({
-  word: Yup.string().required("Ups! No has ingresado un dato válido")
+  word: Yup.string().required("Ups! Ingresa un dato válido :)")
 });
 
 const AuthSchema = {
