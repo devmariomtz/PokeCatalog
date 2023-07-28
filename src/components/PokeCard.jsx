@@ -2,8 +2,8 @@ import React from "react";
 import useFetch from "../Hooks/useFetch.js";
 import Loader from "./Loader.jsx";
 const PokeCard = ({ word }) => {
-  if (word.length != 0 || word != "") {
-    const { data, loading } = useFetch(word);
+  if (word != null && (word.length != 0 || word != "")) {
+    const { data, loading } = useFetch(word.toLowerCase());
 
     return (
       <div className="bg-primary flex justify-center items-center flex-col w-full text-[1.2em]">
@@ -13,7 +13,9 @@ const PokeCard = ({ word }) => {
           </div>
         ) : (
           <>
-            <div className="bg-gray-400 w-[30%] flex justify-center flex-col rounded-[20px] p-3">
+            <div
+              className="w-[30%] flex justify-center flex-col bg-white-100  bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border border-gray-100 p-4  rounded-md  sm:text-center md:text-center"
+            >
               <img src={data.sprites.front_default} alt="" className="" />
               <div className="flex flex-col justify-center items-center">
                 <h2>
@@ -26,7 +28,7 @@ const PokeCard = ({ word }) => {
         )}
       </div>
     );
-  } else{
+  } else {
     return <></>;
   }
 };

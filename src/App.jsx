@@ -2,7 +2,7 @@ import RoutesNavigator from "./routes/RoutesNavigator"
 
 function App() {
     return (
-        <div className="App">
+        <div className="App bg-primary">
             <RoutesNavigator/>
         </div>
     )
