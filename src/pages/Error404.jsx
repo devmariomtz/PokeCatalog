@@ -24,7 +24,7 @@ const Error404 = () => {
         <div className="flex justify-center mb-7">
           <a href="catalog" className="hover:drop-shadow-landing-logo-shadow">
             <img
-              src="/pokemon-icon.jpg"
+              src="/assets/pokemon-icon.jpg"
                           className="w-[12em] hover:scale-[1.1] transition-all sm:w-[15em]"
               alt="PokeCatalog&trade;"
               title="PokeCatalog&trade;"
