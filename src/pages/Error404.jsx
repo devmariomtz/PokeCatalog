@@ -11,7 +11,7 @@ const Error404 = () => {
           <h1 className="font-extrabold text-7xl lg:text-9xl sm:text-9xl flex flex-col">Error</h1>
           <img
             className="w-[30vw] text-white bg-white m-5"
-            src="src/assets/error-404.svg"
+            src="/assets/error-404.svg"
             alt="Error 404"
           />
         </div>
@@ -24,7 +24,7 @@ const Error404 = () => {
         <div className="flex justify-center mb-7">
           <a href="catalog" className="hover:drop-shadow-landing-logo-shadow">
             <img
-              src="/assets/pokemon-icon.jpg"
+              src="/pokemon-icon.jpg"
                           className="w-[12em] hover:scale-[1.1] transition-all sm:w-[15em]"
               alt="PokeCatalog&trade;"
               title="PokeCatalog&trade;"
